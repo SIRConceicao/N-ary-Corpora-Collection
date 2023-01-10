@@ -6,11 +6,11 @@ It will be mostly focused on <a href="#1_biomedical">biomedical datasets</a>,  a
 <h4>Motivation:</h4>
 
 Relation extraction (RE) is a task of text mining that aims to analyse the relations between the identified entities [1]. N-ary relation extraction aims to extract relations from n entities. Currently, only few datasets are available for this type of RE.
-N-ary relation extraction can help to answer more specific questions such as : 
+N-ary relation extraction can help to answer more specific questions such as: 
 * given a mutation in a gene, which drug would it respond to, resulting in a gene-mutation-drug, ternary relation [2]; 
 * given a gene variation how does it impact drug response phenotype, a ternary relation of gene variation-drug-phenotype [3]; 
 * which type of drugs combinations will result in a positive effect [4]; 
-* given a specific mutation in a gene, how does it affects the reaction to the drug [5].
+* given a specific mutation in a gene, how does it affect the reaction to the drug [5].
 
  
 ## <a id="1_biomedical"></a> 1. Biomedical Datasets
@@ -64,12 +64,13 @@ N-ary relation extraction can help to answer more specific questions such as :
 <sub> Note: Sent = Sentence, Par = Paragraph, Abs = Abstract, Doc = Document </sub>
 
  <h2><a id="1.1"></a>#1.1 - Drug-Gene-Mutation</h2>
- A silver standard drug-gene-mutation dataset in the context of molecular tumor boards. Filtering from an initial circa one million full text articles from PubMed Central and applying distant supervision, the final dataset resulted in 3,462 ternary relation instances, were just 59 relations were unique. The dataset could also be divided in sub-relations of drug-gene with 137,469 instances and of drug-mutation with 3,192 instances.
+ A silver standard drug-gene-mutation dataset in the context of molecular tumour boards. Filtering from an initial circa one million full text articles from PubMed Central and applying distant supervision, the final dataset resulted in 3,462 ternary relation instances, where just 59 relations were unique. The dataset could also be divided in sub-relations of drug-gene with 137,469 instances and of drug-mutation with 3,192 instances.
 Distant supervision was applied to the binary pairs using the Gene Drug Knowledge Database.
 
  <h4> Characteristics </h4>
  
  * Language : English
+ * Format : TSV
  * Standard : Silver
  * Data origin : Filtered from 1M PubMed abstracts
  * Number of instances : 144,150
@@ -79,29 +80,34 @@ Distant supervision was applied to the binary pairs using the Gene Drug Knowledg
         * 3-ary : 3462 (59 unique)
         * 2-ary : Drug-Gene 137,496 & Drug-Mutation 3192
     * Negative examples were created by randomly sampling co-occurring entity triples without known interactions
-  
+ 
+
  
 <h2><a id="1.2"></a>#1.2 - PGxCorpus</h2>
 The PGxCorpus, is a manually annotated corpus consisting in entities of interest in the pharmacogenomics field, such as gene variations, phenotypes, genes and drugs. This corpus consists of 945 sentences with 6,761 annotated entities and 2,871 relations, 10 types of entities and 7 types of relations.
-Although this corpus is not specifically build for n-ary relations, 92% of its sentences have three target entities of genomic factor, chemical and phenotype.
+Although this corpus is not specifically built for n-ary relations, 92% of its sentences have three target entities of genomic factor, chemical and phenotype.
 
 <h4> Characteristics </h4>
  
  * Language : English
+ * Format : Brat
  * Standard : Gold
  * Data origin : 911 PubMed abstracts
  * Number of instances : 945 phrases
  * N-ary : 2-ary & 3-ary (drug-genetic factors-phenotype)
  * Total relations : 2871
 
+ 
+
 
 <h2><a id="1.3"></a>#1.3 - Drug Combinations Dataset</h2>
-Studies have suggest that the combination of two of more drugs have a more positive impact treating some medical conditions than a single drug. 
-This dataset was build using 1600 manually annotated abstracts, having a variable-length n-ary relations between drug entities (from 2 to 15 drug mentions.) These mentions might be within a sentece or in a paragraph or abstract (enclosing context).
+Studies have suggested that the combination of two of more drugs have a more positive impact treating some medical conditions than a single drug. 
+This dataset was build using 1600 manually annotated abstracts, having a variable-length n-ary relations between drug entities (from 2 to 15 drug mentions.) These mentions might be within a sentence or in a paragraph or abstract (enclosing context).
 
 <h4>Characteristics:</h4>
 
 * Language : English
+* Format : JSON lines
 * Standard : Gold
 * Data origin : 1600 PubMed abstracts
 * Number of instances :1634
@@ -147,13 +153,14 @@ This dataset was build using 1600 manually annotated abstracts, having a variabl
 
 ---
 <h2><a id="2.1"></a>#2.1 - Scirex</h2>
-SCIREX is a document-level dataset that includes several Information Extraction tasks, such as document-level N-ary relation identification from scientific publications and entity identification. It presents relations between the entites of type (Dataset, Method, Metric and Task) which focus on the main results of a scientific article. It is fully annotated with  entities,  their  mentions,  their  coreferences,and their document level relation
+SCIREX is a document-level dataset that includes several Information Extraction tasks, such as document-level N-ary relation identification from scientific publications and entity identification. It presents relations between the entities of type (Dataset, Method, Metric and Task) which focus on the main results of a scientific article. It is fully annotated with  entities,  their  mentions,  their  coreferences, and their document level relation
 
 
 
 <h4> Characteristics </h4>
 
  * Language : English
+ * Format : JSON lines
  * Standard : Gold
  * Data origin : 483 Fully annotated documents from Papers with Code
  * Number of instances : UNK
@@ -174,4 +181,22 @@ References:
 
 [5] R. Jia, C. Wong, and H. Poon, “Document-level n-ary relation extraction with multiscale representation learning,” in Proceedings of the 2019 Conference of the North American Chapter of the Association for Computational Linguistics: Human Language Technologies, Volume 1 (Long and Short Papers), (Minneapolis, Minnesota), pp. 3693–3704, Association for Computational Linguistics, June 2019.
 
+</h6>
+
+---
+<h6>
+This section provides the information about the search queries and platforms for this work:
+ 
+[Date : 5-12-2022] 
+
+Search queries: 
+"n-ary";
+"n-ary" AND "relation extraction";
+"n-ary" AND "relation extraction" AND "biomedical";  
+"n-ary" AND "relation extraction" OR "biomedical" 
+
+Web Search Platforms: [<a href="https://scholar.google.com/">Google Scholar</a>]; 
+[<a href="https://pubmed.ncbi.nlm.nih.gov/">PubMed</a>];
+[<a href="https://www.semanticscholar.org/">Semantic Scholar</a>]
+ 
 </h6>
