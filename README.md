@@ -61,7 +61,18 @@ Example questions it can answer::
         <td><a href="https://aclanthology.org/2022.naacl-main.233/"> A Dataset for N-ary Relation Extraction of Drug Combinations</a> | [<a href="https://huggingface.co/datasets/allenai/drug-combo-extraction">Dataset</a>]</td>
     </tr>
     <tr>
-        <td><a href="#1.4">1.4</a></td>
+      <td><a href="#1.4">1.4</a></td>
+      <td>2023</td>
+      <td>Genes &amp; Gene variants</td>
+      <td>4-ary</td>
+      <td>8442 </td>
+      <td>🥇Gold</td>
+      <td>Doc</td>
+      <td>OLIDA v2 Database Docs </td>
+      <td><a href="https://academic.oup.com/database/article/doi/10.1093/database/baae039/7683721"> DUVEL: an active-learning annotated biomedical corpus for the recognition of oligogenic combinations</a> | [<a href="https://huggingface.co/datasets/cnachteg/duvel">Dataset</a>]</td>
+    </tr>
+    <tr>
+        <td><a href="#1.5">1.5</a></td>
         <td>2025</td>
         <td>Milk oligosaccharides composition entities</td>
         <td>Variable length N-ary</td>
@@ -134,7 +145,24 @@ This dataset was build using 1600 manually annotated abstracts, having a variabl
  
 
 
-<h2><a id="1.4"></a>📑1.4 - MilkOligoCorpus</h2>
+<h2><a id="1.4"></a>📑1.4 - DUVEL</h2>
+DUVEL provides a unique biomedical corpus focusing on 4-ary relations between two genes and two variants responsible for oligogenic diseases. It includes digenic variant combinations i.e. relations involving two genes and at least two variants. The resulting fragments of text are texts with masked entities, each containing a potential 4-ary digenic, i.e. gene–variant–gene–variant, relation.
+
+<h4>Characteristics:</h4>
+
+* Language : English
+* Format : csv
+* Standard : Gold
+* Data origin : 85 OLIDA v2 database documents
+* Number of instances : 8442
+   * Train set: 6553
+   * Dev set : 200
+   * Test set : 1689
+* N-ary : 4-ary
+ 
+
+
+<h2><a id="1.5"></a>📑1.5 - MilkOligoCorpus</h2>
 MilkOligoCorpus consists of 30 PubMed texts fully annotated with entities related to individuals, samples, oligosaccharides and oligosaccharide quantification linked by binary and n-ary relationships. The resulting corpus is a collection of 30 documents annotated with 3626 entities, 2663 binary relations and 1927 n-ary relations. N-ary relations are built from the aggregation of binary relations pertaining to the same knowledge or event.
 
 <h4>Characteristics:</h4>
@@ -162,7 +190,7 @@ MilkOligoCorpus consists of 30 PubMed texts fully annotated with entities relate
         <td><b>Type</b></td>
         <td><b>Annotation Level</b></td>
         <td><b>Relation Source</b></td>
-        <td><b>Reference &amp; Dataset</b></td>
+        <td><b>Paper &amp; Dataset</b></td>
     </tr>
     <tr>
         <td><a href="#2.1">2.1</a></td>
